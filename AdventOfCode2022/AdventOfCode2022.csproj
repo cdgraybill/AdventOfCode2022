@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ProblemInputs\" />
-    <Folder Include="Solvers\" />
-    <Folder Include="Tests\" />
+    <None Update="ProblemInputs\Day01Input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
