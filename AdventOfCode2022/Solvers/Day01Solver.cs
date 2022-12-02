@@ -52,7 +52,8 @@ namespace AdventOfCode2022.Solvers
                     first = haul; 
                 }
                 else if (haul > second) 
-                { 
+                {
+                    third = second;
                     second = haul; 
                 }
                 else if (haul > third)
