@@ -13,7 +13,7 @@ namespace AdventOfCode2022Tests
         public void SolvePartOne()
         {
             var solver = new Day03Solver();
-            var capacitySum = solver.FindCapcitySum(solver.ProblemInput);
+            var capacitySum = solver.GetCapcitySum(solver.ProblemInput);
 
             Assert.That(capacitySum, Is.EqualTo(7903));
         }
@@ -24,7 +24,7 @@ namespace AdventOfCode2022Tests
             var solver = new Day03Solver();
             var groupSum = solver.GetAllGroupBadgeSum();
 
-            Assert.That(groupSum, Is.EqualTo(7903));
+            Assert.That(groupSum, Is.EqualTo(2548));
         }
     }
 }

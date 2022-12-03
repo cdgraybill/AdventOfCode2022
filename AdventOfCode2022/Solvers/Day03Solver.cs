@@ -50,7 +50,7 @@ namespace AdventOfCode2022.Solvers
             return compartments;
         }
 
-        public int FindCapcitySum(List<string> problemInput)
+        public int GetCapcitySum(List<string> problemInput)
         {
             var capacitySum = 0;
 
@@ -59,18 +59,24 @@ namespace AdventOfCode2022.Solvers
                 var compartmentContents = GetCompartmentContents(rucksack);
                 var commonItemList = compartmentContents.CompartmentOneContents
                     .Intersect(compartmentContents.CompartmentTwoContents).ToList();
-                var commonItem = commonItemList[0].ToString().ToLower();
 
-                var priority = Priorities[commonItem];
-
-                if (commonItemList[0].ToString() != commonItem)
-                {
-                    priority += 26;
-                }
-
-                capacitySum += priority;
+                capacitySum = AddPriorityToSum(capacitySum, commonItemList);
             }
 
+            return capacitySum;
+        }
+
+        private int AddPriorityToSum(int capacitySum, List<char> commonItemList)
+        {
+            var commonItem = commonItemList[0].ToString().ToLower();
+            var priority = Priorities[commonItem];
+
+            if (commonItemList[0].ToString() != commonItem)
+            {
+                priority += 26;
+            }
+
+            capacitySum += priority;
             return capacitySum;
         }
 
@@ -99,16 +105,8 @@ namespace AdventOfCode2022.Solvers
                 .Intersect(elfGroup[1])
                 .Intersect(elfGroup[2])
                 .ToList();
-                var commonItem = commonItemList[0].ToString().ToLower();
 
-                var priority = Priorities[commonItem];
-
-                if (commonItemList[0].ToString() != commonItem)
-                {
-                    priority += 26;
-                }
-
-                badgeSum += priority;
+                badgeSum = AddPriorityToSum(badgeSum, commonItemList);
 
                 elfGroup.Clear();
             }
