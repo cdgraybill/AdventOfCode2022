@@ -18,13 +18,19 @@ namespace AdventOfCode2022.Solvers
             {
                 var assignmentRanges = GetAssignmentRanges(line);
 
-                if (!assignmentRanges.AssignmentRangeOne.Except(assignmentRanges.AssignmentRangeTwo).Any() || 
-                    !assignmentRanges.AssignmentRangeTwo.Except(assignmentRanges.AssignmentRangeOne).Any())
+                if (HasContainedRange(assignmentRanges))
                     containedRanges++;
             }
 
             return containedRanges;
         }
+
+        private static bool HasContainedRange(AssignmentRanges assignmentRanges)
+        {
+            return !assignmentRanges.AssignmentRangeOne.Except(assignmentRanges.AssignmentRangeTwo).Any() ||
+                !assignmentRanges.AssignmentRangeTwo.Except(assignmentRanges.AssignmentRangeOne).Any();
+        }
+
         public int GetOverlappingRanges(List<string> problemInput)
         {
             var overlappingRanges = 0;
