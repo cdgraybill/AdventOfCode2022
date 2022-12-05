@@ -10,6 +10,7 @@ namespace AdventOfCode2022.Solvers
     {
         public readonly List<string> ProblemInput = File.ReadLines(@"C:ProblemInputs\Day04Input.txt").ToList();
         public readonly List<string> SampleInput = File.ReadLines(@"C:SampleInputs\Day04SampleInput.txt").ToList();
+
         public int GetContainedRanges(List<string> problemInput)
         {
             var containedRanges = 0;

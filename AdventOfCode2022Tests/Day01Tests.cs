@@ -2,7 +2,7 @@ using AdventOfCode2022.Solvers;
 
 namespace AdventOfCode2022Tests
 {
-    public class Tests
+    public class Day01Tests
     {
         private List<string> sampleInput = new List<string>()
         {
