@@ -9,7 +9,7 @@ namespace AdventOfCode2022.Solvers
     public class Day03Solver
     {
         public readonly List<string> ProblemInput = File.ReadLines(@"C:ProblemInputs\Day03Input.txt").ToList();
-        public readonly Dictionary<string, int> Priorities = new Dictionary<string, int>()
+        public readonly Dictionary<string, int> Priorities = new()
         {
             {"a", 1},
             {"b", 2},
